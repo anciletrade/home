@@ -19,7 +19,7 @@ root.render(
 
 
 
-                    <Router  basename='/ancile'>
+                    <Router  basename='/home'>
                         <Routes>
                             {/*<Route path="/" element={<Dashboard currentUser={user as AuthUser} />}/>*/}
                             <Route index element={<LandingPage/>}/>
