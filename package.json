@@ -2,7 +2,7 @@
   "name": "ui",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Draculvoivode.github.io/ancile",
+  "homepage": "https://mark-sec.github.io/ancile",
   "dependencies": {
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
