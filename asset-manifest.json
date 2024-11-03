@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/home/static/css/main.b944a2c2.css",
-    "main.js": "/home/static/js/main.42a247d4.js",
+    "main.js": "/home/static/js/main.924bcf56.js",
     "static/media/integrations.svg": "/home/static/media/integrations.431d765ffcd5ba11452b8e5de1b77eb2.svg",
     "static/media/ancile_home.png": "/home/static/media/ancile_home.2d23938b8d075d3a907a.png",
     "static/media/logo.svg": "/home/static/media/logo.944be4f38f6751b42beccf185a98e6e1.svg",
@@ -63,10 +63,10 @@
     "static/media/roboto-greek-ext-400-normal.woff": "/home/static/media/roboto-greek-ext-400-normal.16eb83b4a3b1ea994243.woff",
     "index.html": "/home/index.html",
     "main.b944a2c2.css.map": "/home/static/css/main.b944a2c2.css.map",
-    "main.42a247d4.js.map": "/home/static/js/main.42a247d4.js.map"
+    "main.924bcf56.js.map": "/home/static/js/main.924bcf56.js.map"
   },
   "entrypoints": [
     "static/css/main.b944a2c2.css",
-    "static/js/main.42a247d4.js"
+    "static/js/main.924bcf56.js"
   ]
 }
