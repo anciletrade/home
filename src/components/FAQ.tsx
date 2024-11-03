@@ -16,8 +16,7 @@ const faqs = [
     question: 'Are you a broker?',
     answer: (
         <>
-          No. Our users connect their brokerage accounts to our platform and trades directly on our platform. All trades are still executed at their broker.
-
+            No, our users connect their brokerage accounts to our platform and execute trades directly through our system. However, all trades are still processed by their broker.
         </>
     ),
   },
