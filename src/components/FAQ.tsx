@@ -10,7 +10,7 @@ import {
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-// Example FAQ data array
+// FAQ data array
 const faqs = [
   {
     question: 'Are you a broker?',
@@ -21,11 +21,67 @@ const faqs = [
         </>
     ),
   },
+    {
+        question: 'How does trade insurance work?',
+        answer: (
+            <>
+                To protect yourself from trading losses, simply purchase coverage before you start trading for the day. If you incur losses, you will be reimbursed for 50% of your trade losses, up to your selected coverage limit
+            </>
+        ),
+    },
+    {
+        question: 'Which trades are eligible for coverage?',
+        answer: (
+            <>
+                Coverage applies to your first seven trades of the day in stocks and ETFs during regular market hours (9:30 AM - 4:00 PM EST). Pre-market and after-hours trading are not covered.
+            </>
+        ),
+    },
+    {
+        question: 'How do I receive my reimbursement?',
+        answer: (
+            <>
+                Losses are calculated after market close (4:00 PM EST), and reimbursements are deposited into your Ancile account before the start of the next trading day. You can withdraw the funds to your bank account at any time.
+            </>
+        ),
+    },
+    {
+        question: 'Do I need to file a claim?',
+        answer: (
+            <>
+                No claims process is required. Our system automatically tracks your eligible trades and calculates losses, eliminating the need for any paperwork.
+            </>
+        ),
+    },
+    {
+        question: 'Can I use this with my existing brokerage account?',
+        answer: (
+            <>
+                Yes, Ancile integrates seamlessly with major brokerages through our API. Simply connect your brokerage account to start trading with protection.
+            </>
+        ),
+    },
+    {
+        question: 'What happens if I make more than seven day trades?',
+        answer: (
+            <>
+                Only your first seven trades of the day are eligible for coverage. Losses from any subsequent trades will not be covered.
+            </>
+        ),
+    },
+    {
+        question: 'How are trading losses calculated?',
+        answer: (
+            <>
+                Trading losses are calculated based on the realized losses from your closed positions. We assess the cumulative profit/loss from your first seven trades of the day to determine your reimbursement amount.
+            </>
+        ),
+    },
   {
-    question: 'What exactly do you cover?',
+    question: 'What if I don\'t use all seven trades?',
     answer: (
         <>
-          We reimburse 50% of trading losses incurred from the first seven trades in stocks and stock ETFs during regular market hours. The limit of coverage is determined by the level of coverage purchased.
+            Coverage applies to any number of trades up to seven. You will be reimbursed for 50% of your total realized losses from whatever number of trades you make, up to your coverage limit.
         </>
     ),
   },
