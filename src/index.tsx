@@ -19,7 +19,7 @@ root.render(
 
 
 
-                    <Router  basename='/home'>
+                    <Router>
                         <Routes>
                             {/*<Route path="/" element={<Dashboard currentUser={user as AuthUser} />}/>*/}
                             <Route index element={<LandingPage/>}/>

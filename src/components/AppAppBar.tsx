@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {styled, alpha, PaletteMode} from '@mui/material/styles';
+import {styled, alpha, PaletteMode, useTheme} from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -11,7 +11,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Drawer from '@mui/material/Drawer';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
-import {logo} from "../assets";
+import {logoBlack, logoWhite} from "../assets";
 import ToggleColorMode from "./ToggleColorMode";
 import { Link } from 'react-router-dom'; // Import Link from React Router
 
@@ -34,12 +34,13 @@ interface AppAppBarProps {
 }
 export default function AppAppBar({mode,toggleColorMode}:AppAppBarProps) {
   const [open, setOpen] = React.useState(false);
+   const theme = useTheme();
 
   const toggleDrawer = (newOpen: boolean) => () => {
     setOpen(newOpen);
   };
   const handleSignIn = () => {
-    window.location.href = 'https://olisa14.github.io/projectxxx/';
+    window.location.href = 'https://web.dev.anciletrading.com';
   };
   const handleNavigation = (section:string) => {
     // Scroll to the specified section
@@ -58,7 +59,9 @@ export default function AppAppBar({mode,toggleColorMode}:AppAppBarProps) {
         <StyledToolbar variant="dense" disableGutters>
           <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center', px: 0 }}>
 
-            <img src={logo} style={{width: '20%', height:'20px'}} />
+            <img src={theme.palette.mode === 'dark' ? logoWhite : logoBlack}
+
+            style={{width: '20%', height:'40px'}} />
 
             <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
               <Button href="#features" variant="text" color="info" size="small">
