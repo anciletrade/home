@@ -266,20 +266,23 @@ export default function Features() {
               display: { xs: "none", sm: "flex" },
               pointerEvents: "none",
             }}
+            className="hjdbjkd"
           >
             <Box
               sx={(theme) => ({
                 m: "auto",
-                width: 420,
+                width: `100%`,
                 height: 500,
-                backgroundSize: items[selectedItemIndex] ? items[selectedItemIndex].imageSize : '',
+                backgroundSize: items[selectedItemIndex]
+                  ? items[selectedItemIndex].imageSize
+                  : "",
                 backgroundRepeat: "no-repeat",
-                backgroundPosition: 'center',
+                backgroundPosition: "center",
                 backgroundImage: "var(--items-imageLight)",
                 ...theme.applyStyles("dark", {
                   backgroundImage: "var(--items-imageDark)",
                 }),
-                borderRadius: '5px'
+                borderRadius: "5px",
               })}
               style={
                 items[selectedItemIndex]
