@@ -8,37 +8,47 @@ import Typography from "@mui/material/Typography";
 
 import { styled } from "@mui/material/styles";
 
-import DevicesRoundedIcon from "@mui/icons-material/DevicesRounded";
-import EdgesensorHighRoundedIcon from "@mui/icons-material/EdgesensorHighRounded";
-import ViewQuiltRoundedIcon from "@mui/icons-material/ViewQuiltRounded";
+import WaterfallChartIcon from "@mui/icons-material/WaterfallChart";
+import BoltIcon from "@mui/icons-material/Bolt";
+import ShieldIcon from "@mui/icons-material/Shield";
+import LinkIcon from "@mui/icons-material/Link";
 
 const items = [
   {
-    icon: <ViewQuiltRoundedIcon />,
-    title: "Insured trades",
+    icon: <ShieldIcon />,
+    title: "Daily Coverage Flexibility",
     description:
-      "We reimburse 50% of stock and ETF trading losses, up to the purchased coverage, helping traders trade with confidence.",
-    imageLight: 'url("/handshake.jpeg")',
-    imageDark: 'url("/handshake.jpeg")',
+      "Choose protection when you need it. Coverage starts at market open and continues until market close. Select from our three tiers based on your trading size and style.",
+    imageLight: 'url("/coverage.jpeg")',
+    imageDark: 'url("/coverage.jpeg")',
     imageSize: "cover",
   },
   {
-    icon: <EdgesensorHighRoundedIcon />,
-    title: "Integrations",
+    icon: <BoltIcon />,
+    title: "Same-Day Settlement",
     description:
-      "Link your brokerage accounts to trade through our platform, managing multiple investments seamlessly without switching between broker applications.",
+      "No complex claims process. Your daily P&L is calculated at market close and reimbursements are processed automatically. 50% coverage up to your tier limit.",
+    imageLight: 'url("/same_Day.jpeg")',
+    imageDark: 'url("/same_Day.jpeg")',
+    imageSize: "cover",
+  },
+  {
+    icon: <WaterfallChartIcon />,
+    title: "Clear Trading Rules",
+    description:
+      "Maximum 7 trades per day. All trades must be opened and closed same day. Supports stocks, futures, currencies and stock ETFs. Simple, transparent protection.",
+    imageLight: 'url("/trading.jpeg")',
+    imageDark: 'url("/trading.jpeg")',
+    imageSize: "cover",
+  },
+  {
+    icon: <LinkIcon />,
+    title: "Trade With Any Broker",
+    description:
+      "Connect your existing brokerage account and trade through our platform. We support major brokers and automatically track your protected trades.",
     imageLight: 'url("/integrations.svg")',
     imageDark: 'url("/integrations.svg")',
     imageSize: "contain",
-  },
-  {
-    icon: <DevicesRoundedIcon />,
-    title: "Available on all platforms",
-    description:
-      "With our response design, you can connect on web and  mobile devices",
-    imageLight: 'url("/responsive.jpeg")',
-    imageDark: 'url("/responsive.jpeg")',
-    imageSize: "cover",
   },
 ];
 
