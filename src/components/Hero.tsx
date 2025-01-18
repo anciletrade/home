@@ -11,6 +11,8 @@ import Typography from '@mui/material/Typography';
 import { visuallyHidden } from '@mui/utils';
 import { styled } from '@mui/material/styles';
 import {ancile_home} from "../assets";
+import WaitlistForm from "./WaitlistForm";
+
 
 const StyledBox = styled('div')(({ theme }) => ({
   alignSelf: 'center',
@@ -133,6 +135,7 @@ export default function Hero() {
               Join waitlist
             </Button>
           </Stack>
+
           <Typography
             variant="caption"
             color="text.secondary"
