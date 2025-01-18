@@ -42,7 +42,6 @@ const StyledBox = styled("div")(({ theme }) => ({
   }),
 }));
 
-const MotionTypography = motion(Typography);
 const MotionStyledBox = motion(StyledBox);
 
 export default function Hero() {
@@ -107,10 +106,7 @@ export default function Hero() {
           spacing={2}
           sx={{ alignItems: "center", width: { xs: "100%", sm: "70%" } }}
         >
-          <MotionTypography
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ ease: [0.34, 1.56, 0.64, 1], delay: 1 }}
+          <Typography
             variant="h1"
             sx={{
               display: "flex",
@@ -120,10 +116,7 @@ export default function Hero() {
             }}
           >
             Trading&nbsp;is&nbsp;Risky.&nbsp;
-            <MotionTypography
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ ease: [0.34, 1.56, 0.64, 1], delay: 1.5 }}
+            <Typography
               variant="h1"
               sx={(theme) => ({
                 fontSize: "inherit",
@@ -135,8 +128,8 @@ export default function Hero() {
             >
               {" "}
               Be Safe!
-            </MotionTypography>
-          </MotionTypography>
+            </Typography>
+          </Typography>
           <Typography
             sx={{
               textAlign: "center",
@@ -214,7 +207,7 @@ export default function Hero() {
           }}
         >
           <motion.img
-            initial={{ opacity: 0 }}
+            initial={{ opacity: .5 }}
             whileInView={{ opacity: 1 }}
             transition={{ ease: [0.34, 1.56, 0.64, 1], delay: 0.5 }}
             src={

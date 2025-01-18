@@ -53,43 +53,60 @@ export default function AppAppBar({mode,toggleColorMode}:AppAppBarProps) {
   return (
     <AppBar
       position="fixed"
-      sx={{ boxShadow: 0, bgcolor: 'transparent', backgroundImage: 'none', mt: 2 }}
+      sx={{
+        boxShadow: 0,
+        bgcolor: "transparent",
+        backgroundImage: "none",
+        mt: 2,
+      }}
     >
       <Container maxWidth="lg">
         <StyledToolbar variant="dense" disableGutters>
-          <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center', px: 0 }}>
+          <Box
+            sx={{ flexGrow: 1, display: "flex", alignItems: "center", px: 0 }}
+          >
+            <img
+              src={theme.palette.mode === "dark" ? logoWhite : logoBlack}
+              style={{ width: "20%", height: "40px" }}
+            />
 
-            <img src={theme.palette.mode === 'dark' ? logoWhite : logoBlack}
-
-            style={{width: '20%', height:'40px'}} />
-
-            <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+            <Box sx={{ display: { xs: "none", md: "flex" } }}>
               <Button href="#features" variant="text" color="info" size="small">
                 Features
               </Button>
-              <Button href="#how_it_works" variant="text" color="info" size="small">
+              <Button
+                href="#how_it_works"
+                variant="text"
+                color="info"
+                size="small"
+              >
                 How it works
               </Button>
               <Button href="#pricing" variant="text" color="info" size="small">
                 Pricing
               </Button>
-              <Button href="#faq" variant="text" color="info" size="small" sx={{ minWidth: 0 }}>
+              <Button
+                href="#faq"
+                variant="text"
+                color="info"
+                size="small"
+                sx={{ minWidth: 0 }}
+              >
                 FAQ
               </Button>
-
             </Box>
           </Box>
           <Box
             sx={{
-              display: { xs: 'none', md: 'flex' },
+              display: { xs: "none", md: "flex" },
               gap: 1,
-              alignItems: 'center',
+              alignItems: "center",
             }}
           >
             <ToggleColorMode
-                data-screenshot="toggle-mode"
-                mode={mode}
-                toggleColorMode={toggleColorMode}
+              data-screenshot="toggle-mode"
+              mode={mode}
+              toggleColorMode={toggleColorMode}
             />
             {/*
             <Button color="primary" variant="contained" size="small" onClick={handleSignIn}>
@@ -97,17 +114,24 @@ export default function AppAppBar({mode,toggleColorMode}:AppAppBarProps) {
             </Button>
                 */}
           </Box>
-          <Box sx={{ display: { sm: 'flex', md: 'none' } }}>
-            <IconButton aria-label="Menu button" onClick={toggleDrawer(true)}>
-              <MenuIcon />
-            </IconButton>
+          <Box sx={{ display: { sm: "flex", md: "none" } }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: '.5rem' }}>
+              <IconButton sx={{ width: '36px', height: '36px' }} aria-label="Menu button" onClick={toggleDrawer(true)}>
+                <MenuIcon sx={{ fontSize: '18px' }} />
+              </IconButton>
+              <ToggleColorMode
+                data-screenshot="toggle-mode"
+                mode={mode}
+                toggleColorMode={toggleColorMode}
+              />
+            </Box>
             <Drawer anchor="top" open={open} onClose={toggleDrawer(false)}>
-              <Box sx={{ p: 2, backgroundColor: 'background.default' }}>
+              <Box sx={{ p: 2, backgroundColor: "background.default" }}>
                 <Box
                   sx={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
                   }}
                 >
                   <IconButton onClick={toggleDrawer(false)}>
@@ -116,11 +140,17 @@ export default function AppAppBar({mode,toggleColorMode}:AppAppBarProps) {
                 </Box>
                 <Divider sx={{ my: 3 }} />
 
-                <MenuItem onClick={() => handleNavigation('features')}>Features</MenuItem>
-                <MenuItem onClick={() => handleNavigation('how_it_works')}>How it works</MenuItem>
-                <MenuItem onClick={() => handleNavigation('pricing')}>Pricing</MenuItem>
-                <MenuItem onClick={() => handleNavigation('faq')}>FAQ</MenuItem>
-   {/*
+                <MenuItem onClick={() => handleNavigation("features")}>
+                  Features
+                </MenuItem>
+                <MenuItem onClick={() => handleNavigation("how_it_works")}>
+                  How it works
+                </MenuItem>
+                <MenuItem onClick={() => handleNavigation("pricing")}>
+                  Pricing
+                </MenuItem>
+                <MenuItem onClick={() => handleNavigation("faq")}>FAQ</MenuItem>
+                {/*
                 <MenuItem>
                   <Button color="primary" variant="contained" fullWidth onClick={handleSignIn}>
                  Get Started

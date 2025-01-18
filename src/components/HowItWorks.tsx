@@ -1,9 +1,10 @@
-import React from 'react';
-import { Box, Typography, Grid2, Container } from '@mui/material';
-import {service_one, service_two, service_three} from "../assets";
-import { motion } from 'motion/react';
+import React from "react";
+import { Box, Typography, Grid2, Container } from "@mui/material";
+import { service_one, service_two, service_three } from "../assets";
+import { motion } from "motion/react";
 
 const HowItWorks: React.FC = () => {
+  const MotionBox = motion(Box);
   return (
     <Box
       id="how_it_works"
@@ -43,15 +44,17 @@ const HowItWorks: React.FC = () => {
           <Grid2 container spacing={6} justifyContent="center">
             {/* Step 1 */}
             <Grid2 size={{ xs: 12, sm: 6, md: 4 }}>
-              <Box>
+              <MotionBox
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.8, ease: [0.34, 1.56, 0.64, 1] }}
+              >
                 <motion.img
                   animate={{ rotate: [0, -5, 5, -5, 5, 0] }}
                   transition={{
-                    delay: 0.5,
+                    delay: 0.9,
                     ease: [0.34, 1.56, 0.64, 1],
                     duration: 2,
-                    repeat: Infinity,
-                    repeatDelay: 1,
                   }}
                   src={service_one}
                 />
@@ -63,20 +66,22 @@ const HowItWorks: React.FC = () => {
                   multiple accounts from various brokers and streamline your
                   trading. All qualify trades must be done on our platform.
                 </Typography>
-              </Box>
+              </MotionBox>
             </Grid2>
 
             {/* Step 2 */}
             <Grid2 size={{ xs: 12, sm: 6, md: 4 }}>
-              <Box>
+              <MotionBox
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 0.5, ease: [0.34, 1.56, 0.64, 1] }}
+              >
                 <motion.img
                   animate={{ rotate: [0, -5, 5, -5, 5, 0] }}
                   transition={{
-                    delay: 0.5,
+                    delay: 0.9,
                     ease: [0.34, 1.56, 0.64, 1],
                     duration: 2,
-                    repeat: Infinity,
-                    repeatDelay: 1,
                   }}
                   src={service_two}
                 />
@@ -90,20 +95,22 @@ const HowItWorks: React.FC = () => {
                   You can withdraw funds from your balance to your bank account
                   at any time. You can choose any of the three coverage levels.
                 </Typography>
-              </Box>
+              </MotionBox>
             </Grid2>
 
             {/* Step 3 */}
             <Grid2 size={{ xs: 12, sm: 6, md: 4 }}>
-              <Box>
+              <MotionBox
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.8, ease: [0.34, 1.56, 0.64, 1] }}
+              >
                 <motion.img
                   animate={{ rotate: [0, -5, 5, -5, 5, 0] }}
                   transition={{
-                    delay: 0.5,
+                    delay: 0.9,
                     ease: [0.34, 1.56, 0.64, 1],
                     duration: 2,
-                    repeat: Infinity,
-                    repeatDelay: 1,
                   }}
                   src={service_three}
                 />
@@ -113,7 +120,7 @@ const HowItWorks: React.FC = () => {
                 <Typography variant="body1">
                   Trade with confidence. You are covered!
                 </Typography>
-              </Box>
+              </MotionBox>
             </Grid2>
           </Grid2>
         </Box>
