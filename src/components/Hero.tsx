@@ -7,6 +7,11 @@ import Link from "@mui/material/Link";
 import Stack from "@mui/material/Stack";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import DialogTitle from "@mui/material/DialogTitle";
 import { motion } from "motion/react";
 import { visuallyHidden } from "@mui/utils";
 import { styled, useTheme } from "@mui/material/styles";
@@ -43,27 +48,36 @@ const MotionStyledBox = motion(StyledBox);
 export default function Hero() {
   const theme = useTheme();
   const [email, setEmail] = useState("");
-  const [responseMessage, setResponseMessage] = useState("");
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const [dialogMessage, setDialogMessage] = useState("");
 
   const handleRequest = async () => {
     try {
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
       if (!emailRegex.test(email)) {
-        setResponseMessage("Invalid email format. Please provide a valid email address.");
+        setDialogMessage("Invalid email format. Please provide a valid email address.");
+        setDialogOpen(true);
         return;
       }
+
       const response = await Axios.post(`/waitlist`, { email });
 
       if (response.status === 200) {
-        setResponseMessage(response.data.message || "You have successfully joined our waitlist!");
+        setDialogMessage(response.data.message || "You have successfully joined the waitlist!");
       } else {
-        setResponseMessage("Something went wrong. Please try again.");
+        setDialogMessage("Something went wrong. Please try again.");
       }
     } catch (error) {
       console.error("Error submitting email:", error);
-      setResponseMessage("Failed to submit email. Please try again later.");
+      setDialogMessage("Failed to submit email. Please try again later.");
+    } finally {
+      setDialogOpen(true);
     }
+  };
+
+  const handleClose = () => {
+    setDialogOpen(false);
   };
 
   return (
@@ -164,15 +178,6 @@ export default function Hero() {
               Join waitlist
             </Button>
           </Stack>
-          {responseMessage && (
-            <Typography
-              variant="body2"
-              color="text.secondary"
-              sx={{ textAlign: "center", mt: 2 }}
-            >
-              {responseMessage}
-            </Typography>
-          )}
           <Typography
             variant="caption"
             color="text.secondary"
@@ -220,6 +225,19 @@ export default function Hero() {
           />
         </MotionStyledBox>
       </Container>
+
+      {/* Dialog for notifications */}
+      <Dialog open={dialogOpen} onClose={handleClose}>
+
+        <DialogContent>
+          <DialogContentText>{dialogMessage}</DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose} color="primary">
+            Close
+          </Button>
+        </DialogActions>
+      </Dialog>
     </Box>
   );
 }
