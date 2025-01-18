@@ -91,10 +91,11 @@ export default function AppAppBar({mode,toggleColorMode}:AppAppBarProps) {
                 mode={mode}
                 toggleColorMode={toggleColorMode}
             />
+            {/*
             <Button color="primary" variant="contained" size="small" onClick={handleSignIn}>
               Get Started
             </Button>
-
+                */}
           </Box>
           <Box sx={{ display: { sm: 'flex', md: 'none' } }}>
             <IconButton aria-label="Menu button" onClick={toggleDrawer(true)}>
@@ -119,13 +120,13 @@ export default function AppAppBar({mode,toggleColorMode}:AppAppBarProps) {
                 <MenuItem onClick={() => handleNavigation('how_it_works')}>How it works</MenuItem>
                 <MenuItem onClick={() => handleNavigation('pricing')}>Pricing</MenuItem>
                 <MenuItem onClick={() => handleNavigation('faq')}>FAQ</MenuItem>
-
+   {/*
                 <MenuItem>
                   <Button color="primary" variant="contained" fullWidth onClick={handleSignIn}>
                  Get Started
                   </Button>
                 </MenuItem>
-
+*/}
               </Box>
             </Drawer>
           </Box>
