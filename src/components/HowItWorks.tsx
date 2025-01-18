@@ -1,10 +1,9 @@
 import React from "react";
-import { Box, Typography, Grid2, Container } from "@mui/material";
+import { Box, Typography, Grid, Container } from "@mui/material";
 import { service_one, service_two, service_three } from "../assets";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 
 const HowItWorks: React.FC = () => {
-  const MotionBox = motion(Box);
   return (
     <Box
       id="how_it_works"
@@ -26,104 +25,99 @@ const HowItWorks: React.FC = () => {
           gap: { xs: 3, sm: 6 },
         }}
       >
-        <Box
-          sx={{
-            // width: { sm: '100%', md: '60%' },
-            textAlign: { sm: "left", md: "center" },
-          }}
+        <Typography
+          variant="h4"
+          fontWeight="bold"
+          gutterBottom
+          sx={{ marginBottom: "5%" }}
         >
-          <Typography
-            style={{ marginBottom: "5%" }}
-            variant="h4"
-            fontWeight="bold"
-            gutterBottom
-          >
-            How it Works
-          </Typography>
-          <br />
-          <Grid2 container spacing={6} justifyContent="center">
-            {/* Step 1 */}
-            <Grid2 size={{ xs: 12, sm: 6, md: 4 }}>
-              <MotionBox
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.8, ease: [0.34, 1.56, 0.64, 1] }}
-              >
-                <motion.img
-                  animate={{ rotate: [0, -5, 5, -5, 5, 0] }}
-                  transition={{
-                    delay: 0.9,
-                    ease: [0.34, 1.56, 0.64, 1],
-                    duration: 2,
-                  }}
-                  src={service_one}
-                />
-                <Typography variant="h5" fontWeight="bold" gutterBottom>
-                  Sign Up and Connect Account
-                </Typography>
-                <Typography variant="body1">
-                  Sign up and connect your trading account. You can connect
-                  multiple accounts from various brokers and streamline your
-                  trading. All qualify trades must be done on our platform.
-                </Typography>
-              </MotionBox>
-            </Grid2>
+          How it Works
+        </Typography>
 
-            {/* Step 2 */}
-            <Grid2 size={{ xs: 12, sm: 6, md: 4 }}>
-              <MotionBox
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ delay: 0.5, ease: [0.34, 1.56, 0.64, 1] }}
-              >
-                <motion.img
-                  animate={{ rotate: [0, -5, 5, -5, 5, 0] }}
-                  transition={{
-                    delay: 0.9,
-                    ease: [0.34, 1.56, 0.64, 1],
-                    duration: 2,
-                  }}
-                  src={service_two}
-                />
-                <Typography variant="h5" fontWeight="bold" gutterBottom>
-                  Purchase Coverage
-                </Typography>
-                <Typography variant="body1">
-                  After setting up an account, you can deposit up to $500 to
-                  your account. Premium will be deducted from the balance on
-                  your account and reimbursements will be made to this balance.
-                  You can withdraw funds from your balance to your bank account
-                  at any time. You can choose any of the three coverage levels.
-                </Typography>
-              </MotionBox>
-            </Grid2>
+        <Grid container spacing={6} justifyContent="center">
+          {/* Step 1 */}
+          <Grid item xs={12} sm={6} md={4}>
+            <motion.div
+              initial={{ opacity: 0, x: 150 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2, ease: "easeOut", duration: 0.6 }}
+            >
+              <motion.img
+                animate={{ rotate: [0, -5, 5, -5, 5, 0] }}
+                transition={{
+                  delay: 0.3,
+                  ease: [0.34, 1.56, 0.64, 1],
+                  duration: 2,
+                }}
+                src={service_one}
+                alt="Sign Up and Connect Account"
+              />
+              <Typography variant="h5" fontWeight="bold" gutterBottom>
+                Sign Up and Connect Account
+              </Typography>
+              <Typography variant="body1">
+                Sign up and connect your trading account. You can connect
+                multiple accounts from various brokers and streamline your
+                trading. All qualified trades must be done on our platform.
+              </Typography>
+            </motion.div>
+          </Grid>
 
-            {/* Step 3 */}
-            <Grid2 size={{ xs: 12, sm: 6, md: 4 }}>
-              <MotionBox
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.8, ease: [0.34, 1.56, 0.64, 1] }}
-              >
-                <motion.img
-                  animate={{ rotate: [0, -5, 5, -5, 5, 0] }}
-                  transition={{
-                    delay: 0.9,
-                    ease: [0.34, 1.56, 0.64, 1],
-                    duration: 2,
-                  }}
-                  src={service_three}
-                />
-                <Typography variant="h5" fontWeight="bold" gutterBottom>
-                  Trade Away!
-                </Typography>
-                <Typography variant="body1">
-                  Trade with confidence. You are covered!
-                </Typography>
-              </MotionBox>
-            </Grid2>
-          </Grid2>
-        </Box>
+          {/* Step 2 */}
+          <Grid item xs={12} sm={6} md={4}>
+            <motion.div
+              initial={{ opacity: 0, x: 150 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.4, ease: "easeOut", duration: 0.6 }}
+            >
+              <motion.img
+                animate={{ rotate: [0, -5, 5, -5, 5, 0] }}
+                transition={{
+                  delay: 0.5,
+                  ease: [0.34, 1.56, 0.64, 1],
+                  duration: 2,
+                }}
+                src={service_two}
+                alt="Purchase Coverage"
+              />
+              <Typography variant="h5" fontWeight="bold" gutterBottom>
+                Purchase Coverage
+              </Typography>
+              <Typography variant="body1">
+                After setting up an account, deposit up to $500. Premium will be
+                deducted, and reimbursements will be made to your balance. You
+                can withdraw funds to your bank account at any time. Choose any
+                of the three coverage levels.
+              </Typography>
+            </motion.div>
+          </Grid>
+
+          {/* Step 3 */}
+          <Grid item xs={12} sm={6} md={4}>
+            <motion.div
+              initial={{ opacity: 0, x: 150 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.6, ease: "easeOut", duration: 0.6 }}
+            >
+              <motion.img
+                animate={{ rotate: [0, -5, 5, -5, 5, 0] }}
+                transition={{
+                  delay: 0.7,
+                  ease: [0.34, 1.56, 0.64, 1],
+                  duration: 2,
+                }}
+                src={service_three}
+                alt="Trade Away!"
+              />
+              <Typography variant="h5" fontWeight="bold" gutterBottom>
+                Trade Away!
+              </Typography>
+              <Typography variant="body1">
+                Trade with confidence. You are covered!
+              </Typography>
+            </motion.div>
+          </Grid>
+        </Grid>
       </Container>
     </Box>
   );
