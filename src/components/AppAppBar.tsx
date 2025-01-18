@@ -91,12 +91,10 @@ export default function AppAppBar({mode,toggleColorMode}:AppAppBarProps) {
                 mode={mode}
                 toggleColorMode={toggleColorMode}
             />
-            <Button color="primary" variant="text" size="small" onClick={handleSignIn}>
-              Sign in
-            </Button>
             <Button color="primary" variant="contained" size="small" onClick={handleSignIn}>
-              Sign up
+              Get Started
             </Button>
+
           </Box>
           <Box sx={{ display: { sm: 'flex', md: 'none' } }}>
             <IconButton aria-label="Menu button" onClick={toggleDrawer(true)}>
@@ -124,14 +122,10 @@ export default function AppAppBar({mode,toggleColorMode}:AppAppBarProps) {
 
                 <MenuItem>
                   <Button color="primary" variant="contained" fullWidth onClick={handleSignIn}>
-                    Sign up
+                 Get Started
                   </Button>
                 </MenuItem>
-                <MenuItem>
-                  <Button color="primary" variant="outlined" fullWidth onClick={handleSignIn}>
-                    Sign in
-                  </Button>
-                </MenuItem>
+
               </Box>
             </Drawer>
           </Box>

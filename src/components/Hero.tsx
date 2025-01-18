@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
@@ -10,8 +10,8 @@ import Typography from "@mui/material/Typography";
 import { motion } from "motion/react";
 import { visuallyHidden } from "@mui/utils";
 import { styled, useTheme } from "@mui/material/styles";
-import { ancile_home } from "../assets";
-import { ancile_home_light } from "../assets";
+import { ancile_home, ancile_home_light } from "../assets";
+import Axios from "../util/axios";
 
 const StyledBox = styled("div")(({ theme }) => ({
   alignSelf: "center",
@@ -28,7 +28,6 @@ const StyledBox = styled("div")(({ theme }) => ({
   backgroundSize: "cover",
   [theme.breakpoints.up("sm")]: {
     marginTop: theme.spacing(10),
-    // height: 700,
   },
   ...theme.applyStyles("dark", {
     boxShadow: "0 0 24px 12px hsla(210, 100%, 25%, 0.2)",
@@ -39,24 +38,47 @@ const StyledBox = styled("div")(({ theme }) => ({
 }));
 
 const MotionTypography = motion(Typography);
-const MotionStyedBox = motion(StyledBox);
+const MotionStyledBox = motion(StyledBox);
 
 export default function Hero() {
   const theme = useTheme();
+  const [email, setEmail] = useState("");
+  const [responseMessage, setResponseMessage] = useState("");
+
+  const handleRequest = async () => {
+    try {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!emailRegex.test(email)) {
+        setResponseMessage("Invalid email format. Please provide a valid email address.");
+        return;
+      }
+      const response = await Axios.post(`/waitlist`, { email });
+
+      if (response.status === 200) {
+        setResponseMessage(response.data.message || "You have successfully joined our waitlist!");
+      } else {
+        setResponseMessage("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error submitting email:", error);
+      setResponseMessage("Failed to submit email. Please try again later.");
+    }
+  };
+
   return (
     <Box
       id="hero"
-      sx={(theme) => ({
+      sx={{
         width: "100%",
         backgroundRepeat: "no-repeat",
-
         backgroundImage:
           "radial-gradient(ellipse 80% 50% at 50% -20%, hsl(210, 100%, 90%), transparent)",
         ...theme.applyStyles("dark", {
           backgroundImage:
             "radial-gradient(ellipse 80% 50% at 50% -20%, hsl(210, 100%, 16%), transparent)",
         }),
-      })}
+      }}
     >
       <Container
         sx={{
@@ -69,7 +91,6 @@ export default function Hero() {
       >
         <Stack
           spacing={2}
-          useFlexGap
           sx={{ alignItems: "center", width: { xs: "100%", sm: "70%" } }}
         >
           <MotionTypography
@@ -115,7 +136,6 @@ export default function Hero() {
           <Stack
             direction={{ xs: "column", sm: "row" }}
             spacing={1}
-            useFlexGap
             sx={{ pt: 2, width: { xs: "100%", sm: "350px" } }}
           >
             <InputLabel htmlFor="email-hero" sx={visuallyHidden}>
@@ -129,12 +149,8 @@ export default function Hero() {
               aria-label="Enter your email address"
               placeholder="Your email address"
               fullWidth
-              slotProps={{
-                htmlInput: {
-                  autoComplete: "off",
-                  "aria-label": "Enter your email address",
-                },
-              }}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
             <Button
               variant="contained"
@@ -143,24 +159,33 @@ export default function Hero() {
               sx={{
                 minWidth: "fit-content",
               }}
-              className="vibrate"
+              onClick={handleRequest}
             >
               Join waitlist
             </Button>
           </Stack>
+          {responseMessage && (
+            <Typography
+              variant="body2"
+              color="text.secondary"
+              sx={{ textAlign: "center", mt: 2 }}
+            >
+              {responseMessage}
+            </Typography>
+          )}
           <Typography
             variant="caption"
             color="text.secondary"
             sx={{ textAlign: "center" }}
           >
-            By clicking &quot;Start now&quot; you agree to our&nbsp;
+            By clicking &quot;Join waitlist&quot; you agree to our&nbsp;
             <Link href="#" color="primary">
               Terms & Conditions
             </Link>
             .
           </Typography>
         </Stack>
-        <MotionStyedBox
+        <MotionStyledBox
           id="image"
           sx={{
             width: "100%",
@@ -169,7 +194,6 @@ export default function Hero() {
             justifyContent: "center",
             alignItems: "center",
           }}
-          // initial={{ opacity: 0 }}
           animate={{
             opacity: 1,
             boxShadow: [
@@ -177,11 +201,6 @@ export default function Hero() {
               "0 0 18px 12px hsla(220, 100%, 75%, 0.4)",
               "0 0 12px 8px hsla(220, 25%, 80%, 0.2)",
             ],
-            // outlineColor: [
-            //   "hsla(220, 25%, 80%, 0.2)",
-            //   "hsla(220, 100%, 75%, 0.4)",
-            //   "hsla(220, 25%, 80%, 0.2)",
-            // ],
             transition: {
               duration: 3,
               repeat: Infinity,
@@ -199,7 +218,7 @@ export default function Hero() {
             style={{ width: "100%", height: "auto" }}
             alt="Ancile Home"
           />
-        </MotionStyedBox>
+        </MotionStyledBox>
       </Container>
     </Box>
   );
