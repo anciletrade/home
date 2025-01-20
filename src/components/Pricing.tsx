@@ -16,7 +16,7 @@ import CheckCircleRoundedIcon from "@mui/icons-material/CheckCircleRounded";
 
 const tiers = [
   {
-    title: "Level 1",
+    title: "Basic",
     price: "8",
     description: ["Cover 50% of trading losses", "up to $500"],
     buttonText: "Get Started",
@@ -24,7 +24,7 @@ const tiers = [
     buttonColor: "primary",
   },
   {
-    title: "Level 2",
+    title: "Standard",
     subheader: "Recommended",
     price: "14",
     description: ["Cover 50% of trading losses", "up to $1000"],
@@ -33,7 +33,7 @@ const tiers = [
     buttonColor: "secondary",
   },
   {
-    title: "Level 3",
+    title: "Premium",
     price: "25",
     description: ["Cover up to 50% of trading losses", "up to $3000"],
     buttonText: "Get Started",
