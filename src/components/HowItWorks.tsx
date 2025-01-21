@@ -37,15 +37,11 @@ const HowItWorks: React.FC = () => {
         <Grid container spacing={6} justifyContent="center">
           {/* Step 1 */}
           <Grid item xs={12} sm={6} md={4}>
-            <motion.div
-              initial={{ opacity: 0, x: 150 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.2, ease: "easeOut", duration: 0.6 }}
-            >
+            <div>
               <motion.img
-                animate={{ rotate: [0, -5, 5, -5, 5, 0] }}
+                whileInView={{ rotate: [0, -5, 5, -5, 5, 0] }}
                 transition={{
-                  delay: 0.3,
+                  delay: 0.5,
                   ease: [0.34, 1.56, 0.64, 1],
                   duration: 2,
                 }}
@@ -60,18 +56,14 @@ const HowItWorks: React.FC = () => {
                 multiple accounts from various brokers and streamline your
                 trading. All qualified trades must be done on our platform.
               </Typography>
-            </motion.div>
+            </div>
           </Grid>
 
           {/* Step 2 */}
           <Grid item xs={12} sm={6} md={4}>
-            <motion.div
-              initial={{ opacity: 0, x: 150 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.4, ease: "easeOut", duration: 0.6 }}
-            >
+            <div>
               <motion.img
-                animate={{ rotate: [0, -5, 5, -5, 5, 0] }}
+                whileInView={{ rotate: [0, -5, 5, -5, 5, 0] }}
                 transition={{
                   delay: 0.5,
                   ease: [0.34, 1.56, 0.64, 1],
@@ -89,20 +81,16 @@ const HowItWorks: React.FC = () => {
                 can withdraw funds to your bank account at any time. Choose any
                 of the three coverage levels.
               </Typography>
-            </motion.div>
+            </div>
           </Grid>
 
           {/* Step 3 */}
           <Grid item xs={12} sm={6} md={4}>
-            <motion.div
-              initial={{ opacity: 0, x: 150 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.6, ease: "easeOut", duration: 0.6 }}
-            >
+            <div>
               <motion.img
-                animate={{ rotate: [0, -5, 5, -5, 5, 0] }}
+                whileInView={{ rotate: [0, -5, 5, -5, 5, 0] }}
                 transition={{
-                  delay: 0.7,
+                  delay: 0.5,
                   ease: [0.34, 1.56, 0.64, 1],
                   duration: 2,
                 }}
@@ -115,7 +103,7 @@ const HowItWorks: React.FC = () => {
               <Typography variant="body1">
                 Trade with confidence. You are covered!
               </Typography>
-            </motion.div>
+            </div>
           </Grid>
         </Grid>
       </Container>
