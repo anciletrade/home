@@ -26,7 +26,7 @@ const tiers = [
   {
     title: "Plus",
     subheader: "Recommended",
-    price: "14",
+    price: "12",
     description: ["Cover 50% of trading losses", "up to $1000"],
     buttonText: "Start now",
     buttonVariant: "contained",
@@ -34,7 +34,7 @@ const tiers = [
   },
   {
     title: "Pro",
-    price: "25",
+    price: "18",
     description: ["Cover up to 50% of trading losses", "up to $3000"],
     buttonText: "Get Started",
     buttonVariant: "outlined",
