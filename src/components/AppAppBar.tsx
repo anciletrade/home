@@ -67,7 +67,7 @@ export default function AppAppBar({mode,toggleColorMode}:AppAppBarProps) {
           >
             <img
               src={theme.palette.mode === "dark" ? logoWhite : logoBlack}
-              style={{ width: "20%", height: "40px" }}
+              style={{ maxWidth: '160px' }}
             />
 
             <Box sx={{ display: { xs: "none", md: "flex" } }}>
