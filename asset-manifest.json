@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.5044d6aa.css",
-    "main.js": "/static/js/main.ea26aae0.js",
+    "main.js": "/static/js/main.63b1db22.js",
     "static/media/integrations.svg": "/static/media/integrations.431d765ffcd5ba11452b8e5de1b77eb2.svg",
     "static/media/ancile_home.png": "/static/media/ancile_home.67f08c106708de3be865.png",
     "static/media/ancile_light.png": "/static/media/ancile_light.3b3232d44cf085d4cdbc.png",
@@ -65,10 +65,10 @@
     "static/media/roboto-greek-ext-400-normal.woff": "/static/media/roboto-greek-ext-400-normal.16eb83b4a3b1ea994243.woff",
     "index.html": "/index.html",
     "main.5044d6aa.css.map": "/static/css/main.5044d6aa.css.map",
-    "main.ea26aae0.js.map": "/static/js/main.ea26aae0.js.map"
+    "main.63b1db22.js.map": "/static/js/main.63b1db22.js.map"
   },
   "entrypoints": [
     "static/css/main.5044d6aa.css",
-    "static/js/main.ea26aae0.js"
+    "static/js/main.63b1db22.js"
   ]
 }
