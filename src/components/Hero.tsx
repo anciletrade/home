@@ -17,6 +17,7 @@ import { visuallyHidden } from "@mui/utils";
 import { styled, useTheme } from "@mui/material/styles";
 import { ancile_home, ancile_home_light } from "../assets";
 import Axios from "../util/axios";
+import WaitlistWidget from "./WaitlistForm";
 
 const StyledBox = styled("div")(({ theme }) => ({
   alignSelf: "center",
@@ -143,9 +144,9 @@ export default function Hero() {
           <Stack
             direction={{ xs: "column", sm: "row" }}
             spacing={1}
-            sx={{ pt: 2, width: { xs: "100%", sm: "350px" } }}
+            sx={{ pt: 2, width: { xs: "100%"} }}
           >
-            <InputLabel htmlFor="email-hero" sx={visuallyHidden}>
+            {/*<InputLabel htmlFor="email-hero" sx={visuallyHidden}>
               Email
             </InputLabel>
             <TextField
@@ -169,12 +170,15 @@ export default function Hero() {
               onClick={handleRequest}
             >
               Join waitlist
-            </Button>
+            </Button>*/}
+
+            <WaitlistWidget/>
           </Stack>
+          <Box style={{ marginTop: "-40px" }}>
           <Typography
             variant="caption"
             color="text.secondary"
-            sx={{ textAlign: "center" }}
+            sx={{ mt: "-40px",  textAlign: "center" }}
           >
             By clicking &quot;Join waitlist&quot; you agree to our&nbsp;
             <Link href="#" color="primary">
@@ -182,6 +186,11 @@ export default function Hero() {
             </Link>
             .
           </Typography>
+          </Box>
+          
+          
+        
+          
         </Stack>
         <MotionStyledBox
           id="image"

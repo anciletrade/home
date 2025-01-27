@@ -12,6 +12,7 @@ import Footer from './components/Footer';
 import getMPTheme from './theme/getMPTheme';
 import TemplateFrame from './TemplateFrame';
 import HowItWorks from "./components/HowItWorks";
+import LogoCollection from "./components/LogoCollection"
 
 export default function LandingPage() {
   const [mode, setMode] = React.useState<PaletteMode>('light');
@@ -57,7 +58,7 @@ export default function LandingPage() {
         <AppAppBar mode={mode} toggleColorMode={toggleColorMode}/>
         <Hero />
         <div>
-          {/*<LogoCollection />*/}
+          {/* <LogoCollection /> */}
           <Features />
           <Divider />
           {/*<Testimonials />*/}

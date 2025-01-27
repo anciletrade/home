@@ -38,13 +38,7 @@ const HowItWorks: React.FC = () => {
           {/* Step 1 */}
           <Grid item xs={12} sm={6} md={4}>
             <div>
-              <motion.img
-                whileInView={{ rotate: [0, -5, 5, -5, 5, 0] }}
-                transition={{
-                  delay: 0.5,
-                  ease: [0.34, 1.56, 0.64, 1],
-                  duration: 2,
-                }}
+              <img
                 src={service_one}
                 alt="Sign Up and Connect Account"
               />
@@ -62,13 +56,7 @@ const HowItWorks: React.FC = () => {
           {/* Step 2 */}
           <Grid item xs={12} sm={6} md={4}>
             <div>
-              <motion.img
-                whileInView={{ rotate: [0, -5, 5, -5, 5, 0] }}
-                transition={{
-                  delay: 0.5,
-                  ease: [0.34, 1.56, 0.64, 1],
-                  duration: 2,
-                }}
+              <img
                 src={service_two}
                 alt="Purchase Coverage"
               />
@@ -87,13 +75,7 @@ const HowItWorks: React.FC = () => {
           {/* Step 3 */}
           <Grid item xs={12} sm={6} md={4}>
             <div>
-              <motion.img
-                whileInView={{ rotate: [0, -5, 5, -5, 5, 0] }}
-                transition={{
-                  delay: 0.5,
-                  ease: [0.34, 1.56, 0.64, 1],
-                  duration: 2,
-                }}
+              <img 
                 src={service_three}
                 alt="Trade Away!"
               />

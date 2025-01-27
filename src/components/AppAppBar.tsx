@@ -65,10 +65,13 @@ export default function AppAppBar({mode,toggleColorMode}:AppAppBarProps) {
           <Box
             sx={{ flexGrow: 1, display: "flex", alignItems: "center", px: 0 }}
           >
+            <Box sx={{ width: { xs: '30%', sm: '10%' }, marginRight:"100px" }}>
             <img
               src={theme.palette.mode === "dark" ? logoWhite : logoBlack}
-              style={{ width: "20%", height: "40px" }}
+              style={{ width: "100%"  }}
             />
+            </Box>
+            
 
             <Box sx={{ display: { xs: "none", md: "flex" } }}>
               <Button href="#features" variant="text" color="info" size="small">

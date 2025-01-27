@@ -1,6 +1,8 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+import {styled, alpha, PaletteMode, useTheme} from '@mui/material/styles';
+
 import Container from '@mui/material/Container';
 import IconButton from '@mui/material/IconButton';
 import InputLabel from '@mui/material/InputLabel';
@@ -12,13 +14,16 @@ import FacebookIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/X';
 import SitemarkIcon from './SitemarkIcon';
-import {logo} from "../assets";
+import {logoBlack, logoWhite} from "../assets";
+
 
 function Copyright() {
+  
+
   return (
     <Typography variant="body2" sx={{ color: 'text.secondary', mt: 1 }}>
       {'Copyright © '}
-      <Link color="text.secondary" href="https://mui.com/">
+      <Link color="text.secondary" href="https://anciletrading.com/">
         Ancile
       </Link>
       &nbsp;
@@ -28,6 +33,8 @@ function Copyright() {
 }
 
 export default function Footer() {
+  const theme = useTheme();
+
   return (
     <Container
       sx={{
@@ -55,8 +62,8 @@ export default function Footer() {
             minWidth: { xs: '100%', sm: '60%' },
           }}
         >
-          <Box sx={{ width: { xs: '100%', sm: '60%' } }}>
-              <img src={logo}/>
+          <Box sx={{ width: { xs: '25%', sm: '20%' } }}>
+              <img style={{ width:'100%' }}  src={theme.palette.mode === "dark" ? logoWhite : logoBlack}/>
             {/*  <Typography variant="body2" gutterBottom sx={{ fontWeight: 600, mt: 2 }}>*/}
             {/*  Join the newsletter*/}
             {/*</Typography>*/}
@@ -115,7 +122,8 @@ export default function Footer() {
             FAQs
           </Link>
         </Box>
-        <Box
+
+       {/* <Box
           sx={{
             display: { xs: 'none', sm: 'flex' },
             flexDirection: 'column',
@@ -134,7 +142,8 @@ export default function Footer() {
           <Link color="text.secondary" variant="body2" href="#">
             Press
           </Link>
-        </Box>
+        </Box> */}
+
         <Box
           sx={{
             display: { xs: 'none', sm: 'flex' },

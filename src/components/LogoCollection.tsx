@@ -48,7 +48,7 @@ export default function LogoCollection() {
           <Grid item key={index}>
             <img
               src={logo}
-              alt={`Fake company number ${index + 1}`}
+              alt={`company number ${index + 1}`}
               style={logoStyle}
             />
           </Grid>

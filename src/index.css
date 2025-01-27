@@ -35,3 +35,6 @@ code {
     transform: translate(0);
   }
 }
+.launchlist-widget{
+  width: 100%
+}

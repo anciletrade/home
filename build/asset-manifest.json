@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.5af53555.css",
-    "main.js": "/static/js/main.748b37e9.js",
+    "main.css": "/static/css/main.1f32e92d.css",
+    "main.js": "/static/js/main.63b1db22.js",
     "static/media/integrations.svg": "/static/media/integrations.431d765ffcd5ba11452b8e5de1b77eb2.svg",
     "static/media/ancile_home.png": "/static/media/ancile_home.67f08c106708de3be865.png",
     "static/media/ancile_light.png": "/static/media/ancile_light.3b3232d44cf085d4cdbc.png",
@@ -26,6 +26,7 @@
     "static/media/roboto-latin-ext-300-normal.woff2": "/static/media/roboto-latin-ext-300-normal.97cbc447d4a8d41a9543.woff2",
     "static/media/roboto-latin-ext-700-normal.woff2": "/static/media/roboto-latin-ext-700-normal.18841836e391d39e83a8.woff2",
     "static/media/roboto-latin-ext-500-normal.woff2": "/static/media/roboto-latin-ext-500-normal.9a18d7bb9ff7a6af7b32.woff2",
+    "static/media/ancile_white.png": "/static/media/ancile_white.1c63088672b2100d4f8f.png",
     "static/media/roboto-latin-ext-300-normal.woff": "/static/media/roboto-latin-ext-300-normal.14982a9e4857a93b6dce.woff",
     "static/media/roboto-latin-ext-400-normal.woff": "/static/media/roboto-latin-ext-400-normal.27da5b36b6d3a16f53f4.woff",
     "static/media/roboto-latin-ext-500-normal.woff": "/static/media/roboto-latin-ext-500-normal.06c30711d588145a4541.woff",
@@ -62,14 +63,12 @@
     "static/media/roboto-greek-ext-700-normal.woff": "/static/media/roboto-greek-ext-700-normal.4abdc9fff4507f17d726.woff",
     "static/media/roboto-greek-ext-300-normal.woff": "/static/media/roboto-greek-ext-300-normal.b590dbe5c639944366d1.woff",
     "static/media/roboto-greek-ext-400-normal.woff": "/static/media/roboto-greek-ext-400-normal.16eb83b4a3b1ea994243.woff",
-    "static/media/logoBlack.svg": "/static/media/logoBlack.4b16ff1137ffe1cc926c205ad5b68428.svg",
-    "static/media/logoWhite.svg": "/static/media/logoWhite.b696b6f4ca087a2c97297324a60e84a8.svg",
     "index.html": "/index.html",
-    "main.5af53555.css.map": "/static/css/main.5af53555.css.map",
-    "main.748b37e9.js.map": "/static/js/main.748b37e9.js.map"
+    "main.1f32e92d.css.map": "/static/css/main.1f32e92d.css.map",
+    "main.63b1db22.js.map": "/static/js/main.63b1db22.js.map"
   },
   "entrypoints": [
-    "static/css/main.5af53555.css",
-    "static/js/main.748b37e9.js"
+    "static/css/main.1f32e92d.css",
+    "static/js/main.63b1db22.js"
   ]
 }
