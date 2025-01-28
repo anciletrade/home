@@ -142,39 +142,14 @@ export default function Hero() {
             downs with ease. Elevate your trading experience!
           </Typography>
           <Stack
-            direction={{ xs: "column", sm: "row" }}
+            // direction={{ xs: "column", sm: "row" }}
+            justifyContent="center"
             spacing={1}
             sx={{ pt: 2, width: { xs: "100%"} }}
           >
-            {/*<InputLabel htmlFor="email-hero" sx={visuallyHidden}>
-              Email
-            </InputLabel>
-            <TextField
-              id="email-hero"
-              hiddenLabel
-              size="small"
-              variant="outlined"
-              aria-label="Enter your email address"
-              placeholder="Your email address"
-              fullWidth
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <Button
-              variant="contained"
-              color="primary"
-              size="small"
-              sx={{
-                minWidth: "fit-content",
-              }}
-              onClick={handleRequest}
-            >
-              Join waitlist
-            </Button>*/}
-
             <WaitlistWidget/>
           </Stack>
-          <Box style={{ marginTop: "-40px" }}>
+          <Box>
           <Typography
             variant="caption"
             color="text.secondary"

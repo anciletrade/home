@@ -69,6 +69,7 @@ export default function AppAppBar({mode,toggleColorMode}:AppAppBarProps) {
             <img
               src={theme.palette.mode === "dark" ? logoWhite : logoBlack}
               style={{ width: "100%" , maxWidth: '160px'  }}
+              onClick={() => handleNavigation("hero")}
             />
             </Box>
             
