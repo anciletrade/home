@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.1f32e92d.css",
-    "main.js": "/static/js/main.5f474f9e.js",
+    "main.css": "/static/css/main.0300075f.css",
+    "main.js": "/static/js/main.7f297a6a.js",
     "static/media/integrations.svg": "/static/media/integrations.431d765ffcd5ba11452b8e5de1b77eb2.svg",
     "static/media/ancile_home_dark.png": "/static/media/ancile_home_dark.7230877216de5615c594.png",
     "static/media/ancile_home_light.png": "/static/media/ancile_home_light.2ee08aef7fd9b09bfea0.png",
@@ -64,11 +64,11 @@
     "static/media/roboto-greek-ext-300-normal.woff": "/static/media/roboto-greek-ext-300-normal.b590dbe5c639944366d1.woff",
     "static/media/roboto-greek-ext-400-normal.woff": "/static/media/roboto-greek-ext-400-normal.16eb83b4a3b1ea994243.woff",
     "index.html": "/index.html",
-    "main.1f32e92d.css.map": "/static/css/main.1f32e92d.css.map",
-    "main.5f474f9e.js.map": "/static/js/main.5f474f9e.js.map"
+    "main.0300075f.css.map": "/static/css/main.0300075f.css.map",
+    "main.7f297a6a.js.map": "/static/js/main.7f297a6a.js.map"
   },
   "entrypoints": [
-    "static/css/main.1f32e92d.css",
-    "static/js/main.5f474f9e.js"
+    "static/css/main.0300075f.css",
+    "static/js/main.7f297a6a.js"
   ]
 }
