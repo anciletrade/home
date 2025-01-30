@@ -18,6 +18,7 @@ import { styled, useTheme } from "@mui/material/styles";
 import { ancile_home, ancile_home_light } from "../assets";
 import Axios from "../util/axios";
 import WaitlistWidget from "./WaitlistForm";
+import TermsModal from "./TermsModal";
 
 const StyledBox = styled("div")(({ theme }) => ({
   alignSelf: "center",
@@ -153,12 +154,13 @@ export default function Hero() {
           <Typography
             variant="caption"
             color="text.secondary"
-            sx={{ mt: "-40px",  textAlign: "center" }}
+            sx={{ mt: "-5px",  textAlign: "center", display: 'flex' }}
           >
             By clicking &quot;Join waitlist&quot; you agree to our&nbsp;
-            <Link href="#" color="primary">
+            {/* <Link href="#" color="primary">
               Terms & Conditions
-            </Link>
+            </Link> */}
+            <TermsModal />
             .
           </Typography>
           </Box>

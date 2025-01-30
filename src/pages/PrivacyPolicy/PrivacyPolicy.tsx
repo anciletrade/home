@@ -5,90 +5,20 @@ import {
   Box,
   Container,
   Typography,
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
+  List,
+  ListItem,
+  ListItemText,
   Stack,
   useTheme,
-  Divider
+  Divider,
+  Button
 } from "@mui/material";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import { useEffect, useState } from "react";
+import { privacyPolicy } from "../../util/data";
 
 type Props = {};
 
-interface PrivacySection {
-  title: string;
-  items: string[];
-}
-
-const privacyPolicy: PrivacySection[] = [
-  {
-    title: "Information We Collect",
-    items: [
-      "Personal Information: Name, email address, phone number, brokerage account connection details, and bank account information.",
-      "Financial Information: Trade data from your connected brokerage account, including transaction details and daily profit/loss, premium payments, and reimbursement transactions.",
-      "Technical Information: Device information (IP address, browser type, operating system), usage data (access times, navigation within the app).",
-      "Third-Party Authentication Information: Basic profile information from Google, Apple, Amazon, or Facebook login providers."
-    ]
-  },
-  {
-    title: "How We Use Your Information",
-    items: [
-      "Service Provision: To provide and manage our trade insurance services, facilitate brokerage connections, and calculate reimbursements.",
-      "Payments and Transactions: To process premium payments, reimbursements, deposits, and withdrawals.",
-      "Improvement and Analytics: To analyze usage patterns, improve functionality, and monitor for fraudulent activities.",
-      "Communication: To send notifications, updates, and respond to inquiries."
-    ]
-  },
-  {
-    title: "How We Share Your Information",
-    items: [
-      "Service Providers: With third-party vendors assisting in services like payment processing and API integrations.",
-      "Legal Obligations: If required by law or in response to legal processes.",
-      "Business Transfers: In case of a merger, acquisition, or sale of assets."
-    ]
-  },
-  {
-    title: "Data Security",
-    items: [
-      "We implement encryption and secure storage practices but cannot guarantee absolute security."
-    ]
-  },
-  {
-    title: "Your Rights and Choices",
-    items: [
-      "Access and Updates: Update personal information through account settings.",
-      "Data Deletion: Request account and personal data deletion via support@anciletrading.com.",
-      "Opt-Out Options: Unsubscribe from promotional communications via email instructions."
-    ]
-  },
-  {
-    title: "Third-Party Services",
-    items: [
-      "The app integrates with third-party services like Google, Apple, Amazon, Facebook, and brokerage APIs, each with their own privacy policies."
-    ]
-  },
-  {
-    title: "Children’s Privacy",
-    items: [
-      "The app is not intended for individuals under 18, and we do not knowingly collect information from children."
-    ]
-  },
-  {
-    title: "Changes to This Policy",
-    items: [
-      "Updates will be posted on this page. Continued use of the app constitutes acceptance of changes."
-    ]
-  },
-  {
-    title: "Contact Us",
-    items: [
-      "For privacy-related questions, contact support@anciletrading.com.",
-      "Ancile Trading Email: support@anciletrading.com"
-    ]
-  }
-];
 
 const PrivacyPolicy = ({}: Props) => {
   const navigate = useNavigate();
@@ -119,12 +49,28 @@ const PrivacyPolicy = ({}: Props) => {
         <Container>
           <Box
             sx={{
-              width: "120px",
-              py: "2rem"
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center"
             }}
-            onClick={() => navigate("/")}
           >
-            <Logo />
+            <Box
+              sx={{
+                width: "120px",
+                py: "2rem"
+              }}
+              onClick={() => navigate("/")}
+            >
+              <Logo />
+            </Box>
+            <Button
+              variant="text"
+              startIcon={<ArrowBackIosIcon />}
+              sx={{ background: "transparent" }}
+              onClick={() => navigate("/")}
+            >
+              Back Home
+            </Button>
           </Box>
           <Box
             sx={{
@@ -135,7 +81,7 @@ const PrivacyPolicy = ({}: Props) => {
           >
             <Stack
               direction={{ xs: "column", sm: "row" }}
-              alignItems={`end`}
+              alignItems={{ xs: "start", sm: "end" }}
               justifyContent={`space-between`}
             >
               <Typography variant="h4" sx={{ fontWeight: "bold" }}>
@@ -156,28 +102,26 @@ const PrivacyPolicy = ({}: Props) => {
               policy, please do not use the App.
             </Typography>
             <Divider />
-            {privacyPolicy.map((section, index) => (
-              <Accordion
-                key={index}
-                expanded={expanded === index}
-                onChange={handleChange(index)}
-                sx={{
-                  borderStyle: "none",
-                  background: "transparent"
-                }}
-              >
-                <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                  <Typography variant="body2">{section.title}</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  {section.items.map((item, subIndex) => (
-                    <Typography key={subIndex} sx={{ pl: 2 }}>
-                      {item}
-                    </Typography>
-                  ))}
-                </AccordionDetails>
-              </Accordion>
-            ))}
+            <List>
+              {privacyPolicy.map((section, index) => (
+                <ListItem key={index} alignItems="flex-start">
+                  <ListItemText
+                    primary={`${index + 1}. ${section.title}`}
+                    secondary={
+                      <List component="div" disablePadding>
+                        {section.items.map((item, subIndex) => (
+                          <ListItem key={subIndex} sx={{ pl: 4 }}>
+                            <ListItemText
+                              primary={`${index + 1}.${subIndex + 1} ${item}`}
+                            />
+                          </ListItem>
+                        ))}
+                      </List>
+                    }
+                  />
+                </ListItem>
+              ))}
+            </List>
           </Box>
         </Container>
       </Box>
