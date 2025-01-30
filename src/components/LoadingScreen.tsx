@@ -1,9 +1,10 @@
-import { spiral } from "ldrs";
+import { dotPulse } from "ldrs";
+
 import { useTheme } from "@mui/material/styles";
 import { Box } from "@mui/material";
 
 type Props = {};
-spiral.register();
+dotPulse.register();
 
 const LoadingScreen = (props: Props) => {
   const theme = useTheme();
@@ -22,7 +23,7 @@ const LoadingScreen = (props: Props) => {
         backgroundColor: "hsl(220, 30%, 7%)"
       }}
     >
-      <l-spiral size="100" speed="0.9" color={"hsl(210, 98%, 48%)"}></l-spiral>
+       <l-dot-pulse size="43" speed="1.3" color={"#0972d3"}  ></l-dot-pulse>
     </Box>
   );
 };
