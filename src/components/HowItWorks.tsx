@@ -45,7 +45,8 @@ const HowItWorks: React.FC = () => {
               <Typography variant="body1">
                 Link your existing brokerage account securely to Ancile. Keep
                 trading with your preferred broker through our protected
-                platform.<br /> Integration takes less than 2 minutes.
+                platform.
+                <br /> Integration takes less than 2 minutes.
               </Typography>
             </div>
           </Grid>
@@ -60,9 +61,10 @@ const HowItWorks: React.FC = () => {
               <Typography variant="body1">
                 Select you coverage tier before market activity. Protection
                 activates immediately after payment and covers your first seven
-                trades of the day.<br /> Perfect for day trading stocks, futures,
-                currencies and ETFs.Coverage lasts until market close - trade
-                assures knowing you're protected.
+                trades of the day.
+                <br /> Perfect for day trading stocks, futures, currencies and
+                ETFs. Coverage lasts until market close - trade assures knowing
+                you're protected.
               </Typography>
             </div>
           </Grid>
@@ -75,11 +77,12 @@ const HowItWorks: React.FC = () => {
                 Trade Protected.
               </Typography>
               <Typography variant="body1">
-                Open position with confidence through our platform. We track your
-                first seven trades and calculate your cumulative P&L at market
-                close. <br />No per-trade stress - focus on your strategy knowing 50%
-                of net losses are covered. Automatic reimbursement by 9PM ET, no
-                claims needed.
+                Open position with confidence through our platform. We track
+                your first seven trades and calculate your cumulative P&L at
+                market close. <br />
+                No per-trade stress - focus on your strategy knowing 50% of net
+                losses are covered. Automatic reimbursement by 9PM ET, no claims
+                needed.
               </Typography>
             </div>
           </Grid>
