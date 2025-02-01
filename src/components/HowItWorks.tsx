@@ -13,7 +13,7 @@ const HowItWorks: React.FC = () => {
         background: "linear-gradient(180deg, #042241 0%, #021a32 100%)",
         padding: "40px 20px",
         color: "#fff",
-        textAlign: "center",
+        textAlign: "center"
       }}
     >
       <Container
@@ -22,7 +22,7 @@ const HowItWorks: React.FC = () => {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          gap: { xs: 3, sm: 6 },
+          gap: { xs: 3, sm: 6 }
         }}
       >
         <Typography
@@ -38,17 +38,14 @@ const HowItWorks: React.FC = () => {
           {/* Step 1 */}
           <Grid item xs={12} sm={6} md={4}>
             <div>
-              <img
-                src={service_one}
-                alt="Sign Up and Connect Account"
-              />
+              <img src={service_one} alt="Sign Up and Connect Account" />
               <Typography variant="h5" fontWeight="bold" gutterBottom>
-                Sign Up and Connect Account
+                Connect Your Account
               </Typography>
               <Typography variant="body1">
-                Sign up and connect your trading account. You can connect
-                multiple accounts from various brokers and streamline your
-                trading. All qualified trades must be done on our platform.
+                Link your existing brokerage account securely to Ancile. Keep
+                trading with your preferred broker through our protected
+                platform.<br /> Integration takes less than 2 minutes.
               </Typography>
             </div>
           </Grid>
@@ -56,18 +53,16 @@ const HowItWorks: React.FC = () => {
           {/* Step 2 */}
           <Grid item xs={12} sm={6} md={4}>
             <div>
-              <img
-                src={service_two}
-                alt="Purchase Coverage"
-              />
+              <img src={service_two} alt="Purchase Coverage" />
               <Typography variant="h5" fontWeight="bold" gutterBottom>
-                Purchase Coverage
+                Activate Protection
               </Typography>
               <Typography variant="body1">
-                After setting up an account, deposit up to $500. Premium will be
-                deducted, and reimbursements will be made to your balance. You
-                can withdraw funds to your bank account at any time. Choose any
-                of the three coverage levels.
+                Select you coverage tier before market activity. Protection
+                activates immediately after payment and covers your first seven
+                trades of the day.<br /> Perfect for day trading stocks, futures,
+                currencies and ETFs.Coverage lasts until market close - trade
+                assures knowing you're protected.
               </Typography>
             </div>
           </Grid>
@@ -75,15 +70,16 @@ const HowItWorks: React.FC = () => {
           {/* Step 3 */}
           <Grid item xs={12} sm={6} md={4}>
             <div>
-              <img 
-                src={service_three}
-                alt="Trade Away!"
-              />
+              <img src={service_three} alt="Trade Away!" />
               <Typography variant="h5" fontWeight="bold" gutterBottom>
-                Trade Away!
+                Trade Protected.
               </Typography>
               <Typography variant="body1">
-                Trade with confidence. You are covered!
+                Open position with confidence through our platform. We track your
+                first seven trades and calculate your cumulative P&L at market
+                close. <br />No per-trade stress - focus on your strategy knowing 50%
+                of net losses are covered. Automatic reimbursement by 9PM ET, no
+                claims needed.
               </Typography>
             </div>
           </Grid>
