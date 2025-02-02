@@ -11,26 +11,26 @@ const items = [
     icon: <ShieldIcon sx={{ fontSize: 40, color: "primary.main" }} />,
     title: "Daily Coverage Flexibility",
     description:
-      "Choose protection when you need it. Coverage starts at market open and continues until market close. Select from three tiers based on your trading style.",
+      "Choose protection when you need it. Coverage activates immediately after payment and continues until market close. Select from three tiers to match your trading size."
   },
   {
     icon: <BoltIcon sx={{ fontSize: 40, color: "primary.main" }} />,
     title: "Same-Day Settlement",
     description:
-      "No complex claims process. Your daily P&L is calculated at market close and reimbursements are processed automatically.",
+      "No complex claims process. Your daily P&L is calculated at market close and reimbursements are processed automatically."
   },
   {
     icon: <WaterfallChartIcon sx={{ fontSize: 40, color: "primary.main" }} />,
     title: "Clear Trading Rules",
     description:
-      "Maximum 7 trades per day. Supports stocks, futures, currencies, and ETFs. Simple, transparent protection.",
+      "Maximum 7 trades per day. Supports stocks, futures, currencies, and ETFs. Simple, transparent protection."
   },
   {
     icon: <LinkIcon sx={{ fontSize: 40, color: "primary.main" }} />,
     title: "Trade With Any Broker",
     description:
-      "Connect your existing brokerage account. We support major brokers and automatically track your protected trades.",
-  },
+      "Connect your existing brokerage account. We support major brokers and automatically track your protected trades."
+  }
 ];
 
 export default function Features() {
@@ -63,7 +63,7 @@ export default function Features() {
               transition={{
                 duration: 0.6,
                 ease: "easeOut",
-                delay: index * 0.2,
+                delay: index * 0.2
               }}
             >
               <Card
@@ -79,8 +79,8 @@ export default function Features() {
                   transition: "all 0.3s ease-in-out",
                   "&:hover": {
                     boxShadow: 3,
-                    transform: "translateY(-5px)",
-                  },
+                    transform: "translateY(-5px)"
+                  }
                 }}
               >
                 <Box mb={2}>{icon}</Box>
