@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Accordion,
   AccordionSummary,
@@ -6,155 +6,177 @@ import {
   Typography,
   Container,
   Box,
-  Link,
-} from '@mui/material';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+  Link
+} from "@mui/material";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 // FAQ data array
 const faqs = [
   {
-    question: 'Are you a broker?',
+    question: "How does trading protection work?",
     answer: (
-        <>
-            No, our users connect their brokerage accounts to our platform and execute trades directly through our system. However, all trades are still processed by their broker.
-        </>
-    ),
-  },
-    {
-        question: 'How does trade insurance work?',
-        answer: (
-            <>
-                To protect yourself from trading losses, simply purchase coverage before you start trading for the day. If you incur losses, you will be reimbursed for 50% of your trade losses, up to your selected coverage limit
-            </>
-        ),
-    },
-    {
-        question: 'Which trades are eligible for coverage?',
-        answer: (
-            <>
-                Coverage applies to your first seven trades of the day in stocks and ETFs during regular market hours (9:30 AM - 4:00 PM EST). Pre-market and after-hours trading are not covered.
-            </>
-        ),
-    },
-    {
-        question: 'How do I receive my reimbursement?',
-        answer: (
-            <>
-                Losses are calculated after market close (4:00 PM EST), and reimbursements are deposited into your Ancile account before the start of the next trading day. You can withdraw the funds to your bank account at any time.
-            </>
-        ),
-    },
-    {
-        question: 'Do I need to file a claim?',
-        answer: (
-            <>
-                No claims process is required. Our system automatically tracks your eligible trades and calculates losses, eliminating the need for any paperwork.
-            </>
-        ),
-    },
-    {
-        question: 'Can I use this with my existing brokerage account?',
-        answer: (
-            <>
-                Yes, Ancile integrates seamlessly with major brokerages through our API. Simply connect your brokerage account to start trading with protection.
-            </>
-        ),
-    },
-    {
-        question: 'What happens if I make more than seven day trades?',
-        answer: (
-            <>
-                Only your first seven trades of the day are eligible for coverage. Losses from any subsequent trades will not be covered.
-            </>
-        ),
-    },
-    {
-        question: 'How are trading losses calculated?',
-        answer: (
-            <>
-                Trading losses are calculated based on the realized losses from your closed positions. We assess the cumulative profit/loss from your first seven trades of the day to determine your reimbursement amount.
-            </>
-        ),
-    },
-  {
-    question: 'What if I don\'t use all seven trades?',
-    answer: (
-        <>
-            Coverage applies to any number of trades up to seven. You will be reimbursed for 50% of your total realized losses from whatever number of trades you make, up to your coverage limit.
-        </>
-    ),
+      <>
+        Coverage is based on your cumulative daily trading losses, calculated at
+        market close. We cover 50% of your net P&L across all protected trades
+        that day, not individual trade results. For example, if you end the day
+        down $2,000 across your first seven trades, with Plus coverage we'll
+        reimburse $1,000. Only your first seven trades of the day are counted
+        toward coverage.
+      </>
+    )
   },
   {
-    question: 'Do you provide cover for option and cryptocurrency trades?',
+    question: "What trades are eligible for coverage?",
     answer: (
-        <>
-          At this time, coverage is only available for trades in stocks and stock ETFs. We are actively working to extend coverage to other asset classes.
-
-        </>
-    ),
+      <>
+        Day trades only - positions opened and closed same day. We cover stocks,
+        futures, currencies, and stock ETFs. Your first seven trades of the day
+        are covered. Only trades placed after coverage activation are protected.
+      </>
+    )
   },
+  {
+    question: "When do I receive reimbursement?",
+    answer: (
+      <>
+        Reimbursements are processed automatically and paid by 9 PM Eastern Time
+        on the same trading day. We calculate your net daily P&L at market close
+        and reimburse 50% of losses up to your tier limit. No claims process
+        required.
+      </>
+    )
+  },
+  {
+    question: "What's the maximum coverage available?",
+    answer: (
+      <>
+        <p style={{ marginTop: "-.3rem" }}>Three tiers available:</p>
+        <ul>
+          <li>Starter: $8/day, up to $500 coverage </li>
+          <li>Pro: $12/day, up to $1,000 coverage</li>
+          <li>Plus: $18/day, up to $3,000 coverage</li>
+        </ul>
+      </>
+    )
+  },
+  {
+    question: "Is coverage calculated per trade?",
+    answer: (
+      <>
+        <p style={{ marginTop: "-.3rem" }}>
+          No. Coverage is based on your cumulative P&L from your first seven
+          trades of the day. For example:
+        </p>
+        <ul>
+          <li>Trade 1: +$500</li>
+          <li>Trade 2: -$800</li>
+          <li>Trade 3: +$200</li>
+          <li>Trade 4-7: Various P&L</li>
+          <li>Trade 8+: Not counted</li>
+          <li>Net P&L (from trades 1-7): -$100</li>
+          <li>Reimbursement: $50 (50% of net loss)</li>
+        </ul>
+      </>
+    )
+  },
+  {
+    question: "When does coverage start and end?",
+    answer: (
+      <>
+        Coverage begins immediately after premium payment and continues until
+        market close. Only trades placed after coverage activation are
+        protected.
+      </>
+    )
+  },
+  {
+    question: "What if I trade more than seven times?",
+    answer: (
+      <>
+        Only your first seven trades of the day count toward your daily P&L
+        calculation. Any trades beyond the first seven won't be included in
+        coverage calculations, regardless of their profit or loss.
+      </>
+    )
+  },
+  {
+    question: "How is my daily P&L calculated?",
+    answer: (
+      <>
+        <p style={{ marginTop: "-.3rem" }}>
+          We calculate your cumulative net P&L across your first seven qualified
+          trades made after coverage activation until market close. This means:
+        </p>
+        <ul>
+          <li>Winning and losing trades are netted together</li>
+          <li>Coverage applies to overall daily loss</li>
+          <li>First seven trades only - Settlement by 9 PM ET</li>
+        </ul>
+      </>
+    )
+  }
 ];
 
 export default function FAQ() {
   const [expanded, setExpanded] = React.useState<string | false>(false);
 
   const handleChange =
-      (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
-        setExpanded(isExpanded ? panel : false);
-      };
+    (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
+      setExpanded(isExpanded ? panel : false);
+    };
 
   return (
-      <Container
-          id="faq"
-          sx={{
-            pt: { xs: 4, sm: 12 },
-            pb: { xs: 8, sm: 16 },
-            position: 'relative',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            gap: { xs: 3, sm: 6 },
-          }}
+    <Container
+      id="faq"
+      sx={{
+        pt: { xs: 4, sm: 12 },
+        pb: { xs: 8, sm: 16 },
+        position: "relative",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        gap: { xs: 3, sm: 6 }
+      }}
+    >
+      <Typography
+        component="h2"
+        variant="h4"
+        sx={{
+          color: "text.primary",
+          width: { sm: "100%", md: "60%" },
+          textAlign: { sm: "left", md: "center" }
+        }}
       >
-        <Typography
-            component="h2"
-            variant="h4"
-            sx={{
-              color: 'text.primary',
-              width: { sm: '100%', md: '60%' },
-              textAlign: { sm: 'left', md: 'center' },
-            }}
-        >
-          Frequently asked questions
-        </Typography>
-        <Box sx={{ width: '100%' }}>
-          {faqs.map((faq, index) => (
-              <Accordion
-                  key={index}
-                  expanded={expanded === `panel${index}`}
-                  onChange={handleChange(`panel${index}`)}
+        Frequently asked questions
+      </Typography>
+      <Box sx={{ width: "100%" }}>
+        {faqs.map((faq, index) => (
+          <Accordion
+            key={index}
+            expanded={expanded === `panel${index}`}
+            onChange={handleChange(`panel${index}`)}
+          >
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls={`panel${index}d-content`}
+              id={`panel${index}d-header`}
+            >
+              <Typography component="h3" variant="subtitle2">
+                {faq.question}
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography
+                variant="body2"
+                gutterBottom
+                sx={{ maxWidth: { sm: "100%", md: "70%" } }}
               >
-                <AccordionSummary
-                    expandIcon={<ExpandMoreIcon />}
-                    aria-controls={`panel${index}d-content`}
-                    id={`panel${index}d-header`}
-                >
-                  <Typography component="h3" variant="subtitle2">
-                    {faq.question}
-                  </Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography
-                      variant="body2"
-                      gutterBottom
-                      sx={{ maxWidth: { sm: '100%', md: '70%' } }}
-                  >
-                    {faq.answer}
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-          ))}
-        </Box>
-      </Container>
+                {faq.answer}
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+        ))}
+      </Box>
+    </Container>
   );
 }

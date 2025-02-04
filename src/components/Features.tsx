@@ -21,9 +21,9 @@ const items = [
   },
   {
     icon: <WaterfallChartIcon sx={{ fontSize: 40, color: "primary.main" }} />,
-    title: "Clear Trading Rules",
+    title: "Transparent conditions",
     description:
-      "Maximum 7 trades per day. Supports stocks, futures, currencies, and ETFs. Simple, transparent protection."
+      "Your first seven trades are covered daily. Trade stocks, features, currencies and ETFs. Simple, transparent protection."
   },
   {
     icon: <LinkIcon sx={{ fontSize: 40, color: "primary.main" }} />,
