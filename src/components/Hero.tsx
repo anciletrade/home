@@ -34,14 +34,14 @@ const StyledBox = styled("div")(({ theme }) => ({
   backgroundImage: `url(${"/static/screenshots/material-ui/getting-started/templates/dashboard.jpg"})`,
   backgroundSize: "cover",
   [theme.breakpoints.up("sm")]: {
-    marginTop: theme.spacing(10),
+    marginTop: theme.spacing(10)
   },
   ...theme.applyStyles("dark", {
     boxShadow: "0 0 24px 12px hsla(210, 100%, 25%, 0.2)",
     backgroundImage: `url(${"/static/screenshots/material-ui/getting-started/templates/dashboard-dark.jpg"})`,
     outlineColor: "hsla(220, 20%, 42%, 0.1)",
-    borderColor: theme.palette.grey[700],
-  }),
+    borderColor: theme.palette.grey[700]
+  })
 }));
 
 const MotionStyledBox = motion(StyledBox);
@@ -57,7 +57,9 @@ export default function Hero() {
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
       if (!emailRegex.test(email)) {
-        setDialogMessage("Invalid email format. Please provide a valid email address.");
+        setDialogMessage(
+          "Invalid email format. Please provide a valid email address."
+        );
         setDialogOpen(true);
         return;
       }
@@ -65,7 +67,9 @@ export default function Hero() {
       const response = await Axios.post(`/waitlist`, { email });
 
       if (response.status === 200) {
-        setDialogMessage(response.data.message || "You have successfully joined the waitlist!");
+        setDialogMessage(
+          response.data.message || "You have successfully joined the waitlist!"
+        );
       } else {
         setDialogMessage("Something went wrong. Please try again.");
       }
@@ -114,8 +118,8 @@ export default function Hero() {
               display: "flex",
               flexDirection: { xs: "column", lg: "row" },
               alignItems: "center",
-              fontSize: "clamp(3rem, 10vw, 4rem)",
-              fontWeight: '900'
+              fontSize: "clamp(3rem, 10vw, 3.5rem)",
+              fontWeight: "900"
             }}
           >
             Trading&nbsp;is&nbsp;Risky.&nbsp;
@@ -123,7 +127,7 @@ export default function Hero() {
               variant="h1"
               sx={theme => ({
                 fontSize: "inherit",
-                fontWeight: 'inherit',
+                fontWeight: "inherit",
                 color: "primary.main",
                 ...theme.applyStyles("dark", {
                   color: "primary.light"
@@ -138,7 +142,8 @@ export default function Hero() {
             sx={{
               textAlign: "center",
               color: "text.secondary",
-              width: { sm: "100%", md: "80%" }
+              width: { sm: "100%", md: "70%" },
+              fontSize: "1.1rem"
             }}
           >
             First of its kind trading loss insurance. We cover 50% of your
