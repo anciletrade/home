@@ -129,7 +129,7 @@ export default function Hero() {
               })}
             >
               {" "}
-              Be Protected!
+              Be Protected
             </Typography>
           </Typography>
           <Typography
