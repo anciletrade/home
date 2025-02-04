@@ -118,7 +118,7 @@ export default function Hero() {
               display: "flex",
               flexDirection: { xs: "column", lg: "row" },
               alignItems: "center",
-              fontSize: "clamp(3rem, 10vw, 3.5rem)",
+              fontSize: "clamp(3rem, 10vw, 3.7rem)",
               fontWeight: "900"
             }}
           >
@@ -143,7 +143,8 @@ export default function Hero() {
               textAlign: "center",
               color: "text.secondary",
               width: { sm: "100%", md: "70%" },
-              fontSize: "1.1rem"
+              fontSize: "1.5rem",
+              fontWeight: "600"
             }}
           >
             First of its kind trading loss insurance. We cover 50% of your
