@@ -112,9 +112,9 @@ export default function Hero() {
             variant="h1"
             sx={{
               display: "flex",
-              flexDirection: { xs: "column", md: "row" },
+              flexDirection: { xs: "column", lg: "row" },
               alignItems: "center",
-              fontSize: "clamp(3rem, 10vw, 3.5rem)"
+              fontSize: "clamp(3rem, 10vw, 3rem)"
             }}
           >
             Trading&nbsp;is&nbsp;Risky.&nbsp;
