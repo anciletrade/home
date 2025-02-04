@@ -23,7 +23,7 @@ const items = [
     icon: <WaterfallChartIcon sx={{ fontSize: 40, color: "primary.main" }} />,
     title: "Transparent Conditions",
     description:
-      "Your first seven trades are covered daily. Trade stocks, features, currencies and ETFs. Simple, transparent protection."
+      "Your first seven trades are covered daily. Trade stocks, futures, currencies and ETFs. Simple, transparent protection."
   },
   {
     icon: <LinkIcon sx={{ fontSize: 40, color: "primary.main" }} />,
