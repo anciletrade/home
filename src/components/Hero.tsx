@@ -106,7 +106,7 @@ export default function Hero() {
       >
         <Stack
           spacing={2}
-          sx={{ alignItems: "center", width: { xs: "100%", sm: "70%" } }}
+          sx={{ alignItems: "center", width: { xs: "100%", sm: "80%" } }}
         >
           <Typography
             variant="h1"
@@ -114,7 +114,8 @@ export default function Hero() {
               display: "flex",
               flexDirection: { xs: "column", lg: "row" },
               alignItems: "center",
-              fontSize: "clamp(3rem, 10vw, 3rem)"
+              fontSize: "clamp(3rem, 10vw, 4rem)",
+              fontWeight: '900'
             }}
           >
             Trading&nbsp;is&nbsp;Risky.&nbsp;
@@ -122,6 +123,7 @@ export default function Hero() {
               variant="h1"
               sx={theme => ({
                 fontSize: "inherit",
+                fontWeight: 'inherit',
                 color: "primary.main",
                 ...theme.applyStyles("dark", {
                   color: "primary.light"
