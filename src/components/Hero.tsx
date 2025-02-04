@@ -91,8 +91,8 @@ export default function Hero() {
           "radial-gradient(ellipse 80% 50% at 50% -20%, hsl(210, 100%, 90%), transparent)",
         ...theme.applyStyles("dark", {
           backgroundImage:
-            "radial-gradient(ellipse 80% 50% at 50% -20%, hsl(210, 100%, 16%), transparent)",
-        }),
+            "radial-gradient(ellipse 80% 50% at 50% -20%, hsl(210, 100%, 16%), transparent)"
+        })
       }}
     >
       <Container
@@ -101,7 +101,7 @@ export default function Hero() {
           flexDirection: "column",
           alignItems: "center",
           pt: { xs: 14, sm: 20 },
-          pb: { xs: 8, sm: 12 },
+          pb: { xs: 8, sm: 12 }
         }}
       >
         <Stack
@@ -114,60 +114,55 @@ export default function Hero() {
               display: "flex",
               flexDirection: { xs: "column", md: "row" },
               alignItems: "center",
-              fontSize: "clamp(3rem, 10vw, 3.5rem)",
+              fontSize: "clamp(3rem, 10vw, 3.5rem)"
             }}
           >
             Trading&nbsp;is&nbsp;Risky.&nbsp;
             <Typography
               variant="h1"
-              sx={(theme) => ({
+              sx={theme => ({
                 fontSize: "inherit",
                 color: "primary.main",
                 ...theme.applyStyles("dark", {
-                  color: "primary.light",
-                }),
+                  color: "primary.light"
+                })
               })}
             >
               {" "}
-              Be Safe!
+              Be Protected!
             </Typography>
           </Typography>
           <Typography
             sx={{
               textAlign: "center",
               color: "text.secondary",
-              width: { sm: "100%", md: "80%" },
+              width: { sm: "100%", md: "80%" }
             }}
           >
-            Our trade loss insurance empowers traders to navigate the ups and
-            downs with ease. Elevate your trading experience!
+            First of its kind trading loss insurance. We cover 50% of your
+            trading losses. Trade assured
           </Typography>
           <Stack
             // direction={{ xs: "column", sm: "row" }}
             justifyContent="center"
             spacing={1}
-            sx={{ pt: 2, width: { xs: "100%"} }}
+            sx={{ pt: 2, width: { xs: "100%" } }}
           >
-            <WaitlistWidget/>
+            <WaitlistWidget />
           </Stack>
           <Box>
-          <Typography
-            variant="caption"
-            color="text.secondary"
-            sx={{ mt: "-5px",  textAlign: "center", display: 'flex' }}
-          >
-            By clicking &quot;Join waitlist&quot; you agree to our&nbsp;
-            {/* <Link href="#" color="primary">
+            <Typography
+              variant="caption"
+              color="text.secondary"
+              sx={{ mt: "-5px", textAlign: "center", display: "flex" }}
+            >
+              By clicking &quot;Join waitlist&quot; you agree to our&nbsp;
+              {/* <Link href="#" color="primary">
               Terms & Conditions
             </Link> */}
-            <TermsModal />
-            .
-          </Typography>
+              <TermsModal />.
+            </Typography>
           </Box>
-          
-          
-        
-          
         </Stack>
         <MotionStyledBox
           id="image"
@@ -176,24 +171,24 @@ export default function Hero() {
             height: "auto",
             display: "flex",
             justifyContent: "center",
-            alignItems: "center",
+            alignItems: "center"
           }}
           animate={{
             opacity: 1,
             boxShadow: [
               "0 0 12px 8px hsla(220, 25%, 80%, 0.2)",
               "0 0 18px 12px hsla(220, 100%, 75%, 0.4)",
-              "0 0 12px 8px hsla(220, 25%, 80%, 0.2)",
+              "0 0 12px 8px hsla(220, 25%, 80%, 0.2)"
             ],
             transition: {
               duration: 3,
               repeat: Infinity,
-              ease: [0.34, 1.56, 0.64, 1],
-            },
+              ease: [0.34, 1.56, 0.64, 1]
+            }
           }}
         >
           <motion.img
-            initial={{ opacity: .5 }}
+            initial={{ opacity: 0.5 }}
             whileInView={{ opacity: 1 }}
             transition={{ ease: [0.34, 1.56, 0.64, 1], delay: 0.5 }}
             src={
@@ -207,7 +202,6 @@ export default function Hero() {
 
       {/* Dialog for notifications */}
       <Dialog open={dialogOpen} onClose={handleClose}>
-
         <DialogContent>
           <DialogContentText>{dialogMessage}</DialogContentText>
         </DialogContent>
